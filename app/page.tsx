@@ -1,5 +1,5 @@
-import { LoginShell } from '@/components/login-shell';
+import { AuthScreen } from '@/components/login-shell';
 
 export default function Home() {
-  return <LoginShell />;
+  return <AuthScreen />;
 }
