@@ -1,0 +1,104 @@
+{
+  "project_context": {
+    "app_name": "Vault Drive",
+    "tagline": "Store Secure. Access Anywhere.",
+    "theme": "Dark Only",
+    "type": "hybrid_fullstack",
+    "framework": "Expo React Native (.js files)",
+    "target_platforms": ["Mobile (iOS/Android)", "Web/Tablet"]
+  },
+  "design_archetype": {
+    "category": "Swiss & High-Contrast (Adapted for Dark Mode)",
+    "vibe": "Secure, authoritative, high-performance, clear hierarchy",
+    "rationale": "Cloud storage requires absolute trust, clarity of data, and high structural organization. Dark theme ensures focus on content and reduced eye strain."
+  },
+  "color_palette": {
+    "background_main": "#0B1F3A",
+    "background_surface": "#0F172A",
+    "primary_brand": "#2563EB",
+    "accent_highlight": "#3B82F6",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#94A3B8",
+    "surface_light": "#F1F5F9",
+    "notes": "STRICT USAGE: The theme is dark mode ONLY. Use #0B1F3A for the main app background. Use #0F172A for nested surfaces like the sidebar, cards, and modals. #F1F5F9 should be used sparingly for extremely high-contrast active states or inverse chips if needed, but not as a main background."
+  },
+  "typography": {
+    "heading_font": "Outfit, sans-serif (or System bold)",
+    "body_font": "IBM Plex Sans, sans-serif (or System regular)",
+    "rules": {
+      "h1": {
+        "size": "32px",
+        "weight": "800",
+        "tracking": "tight"
+      },
+      "h2": {
+        "size": "24px",
+        "weight": "700"
+      },
+      "h3": {
+        "size": "20px",
+        "weight": "600"
+      },
+      "body": {
+        "size": "16px",
+        "weight": "400"
+      },
+      "small_labels": {
+        "size": "14px",
+        "weight": "500",
+        "tracking": "wide",
+        "text_transform": "uppercase"
+      }
+    }
+  },
+  "spacing_and_layout": {
+    "grid_system": "8pt base (8, 16, 24, 32, 40, 48, 64)",
+    "touch_targets": "Minimum 44x44px for all touchable elements (buttons, icons, links)",
+    "border_radius": {
+      "small": "8px",
+      "medium": "12px",
+      "large": "16px",
+      "pill": "9999px"
+    },
+    "responsive_behavior": {
+      "mobile": "Sidebar transforms into a slide-in Drawer. Single column layouts.",
+      "tablet_web": "Persistent left sidebar. Grid layouts (2-4 columns depending on width)."
+    }
+  },
+  "media_assets": {
+    "logo_url": "https://customer-assets.emergentagent.com/job_6144f956-7c73-4eb3-aeed-02ee7146e9be/artifacts/jtbx3yd4_ChatGPT%20Image%20May%202%2C%202026%2C%2007_50_21%20PM.png",
+    "reference_dashboard": "https://customer-assets.emergentagent.com/job_6144f956-7c73-4eb3-aeed-02ee7146e9be/artifacts/k9z2sa43_1F4A5656-728C-4F5C-8A69-801A4CBB9731.png",
+    "reference_my_files": "https://customer-assets.emergentagent.com/job_6144f956-7c73-4eb3-aeed-02ee7146e9be/artifacts/itagurw4_AF6B4329-0E98-4946-838E-B431C30640E0.png",
+    "reference_plans": "https://customer-assets.emergentagent.com/job_6144f956-7c73-4eb3-aeed-02ee7146e9be/artifacts/agympicu_ChatGPT%20Image%20May%202%2C%202026%2C%2007_57_31%20PM.png",
+    "reference_icons": "https://customer-assets.emergentagent.com/job_6144f956-7c73-4eb3-aeed-02ee7146e9be/artifacts/nm57x89y_ChatGPT%20Image%20May%202%2C%202026%2C%2008_10_53%20PM.png"
+  },
+  "ui_components": {
+    "buttons": {
+      "primary": "Background: #2563EB, Text: #FFFFFF, Rounded: 8px. Hover/Active: #3B82F6.",
+      "secondary_outline": "Border: 1px solid #94A3B8, Text: #FFFFFF, Background: Transparent.",
+      "action_circular": "Background: #0F172A, Icon: #3B82F6, Rounded: full. (Used on file cards)"
+    },
+    "sidebar": {
+      "background": "#0F172A",
+      "text": "#94A3B8",
+      "active_state": "Background: #0B1F3A, Text: #3B82F6, Left border accent: 3px solid #2563EB",
+      "layout": "Top: Logo + Wordmark. Middle: Navigation links. Bottom: Storage widget, Upgrade CTA, User Row, Sign Out."
+    },
+    "cards": {
+      "dashboard_upload": "Large dashed border area, Background: #0B1F3A / #0F172A gradient, Icon: giant blue upload icon.",
+      "stat_tiles": "Background: #0F172A, padding: 16px, rounded: 12px, Value text: 24px #FFFFFF, Label text: 14px #94A3B8.",
+      "file_folder_cards": "Background: #0F172A, padding: 16px. Folders have large blue folder icon + 'Double-click to open'. Files show generic icon + 3 circular action buttons (download, share, trash).",
+      "plan_cards": "Background: #0F172A, border: 1px solid #0B1F3A. Active/Popular plan has glowing border (#3B82F6) and floating 'Most Popular' pill."
+    },
+    "navigation_elements": {
+      "quick_access_chips": "Background: #0B1F3A, Text: #FFFFFF, Border: 1px solid #94A3B8. Rounded: Pill.",
+      "breadcrumbs": "Text: #94A3B8 for parents, #FFFFFF for current directory. Separator: '/'"
+    }
+  },
+  "implementation_rules": {
+    "icons": "Use ONLY @expo/vector-icons (Ionicons, MaterialCommunityIcons, Feather). NO EMOJIS.",
+    "testing": "All interactive and key informational elements MUST include `data-testid` attribute. Use role-based naming (e.g. `data-testid='upload-dropzone'`).",
+    "styling_approach": "Use Expo StyleSheet or NativeWind. Ensure cross-platform compatibility (.js extensions). Use 'flex' for all layouts.",
+    "dark_mode": "Strictly Dark Mode. Do not implement a light theme."
+  }
+}
