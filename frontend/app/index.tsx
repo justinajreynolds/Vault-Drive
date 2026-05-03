@@ -1,30 +1,37 @@
-import { Text, View, StyleSheet, Image } from "react-native";
-
-const EXPO_PUBLIC_BACKEND_URL = process.env.EXPO_PUBLIC_BACKEND_URL;
+import { useEffect } from "react";
+import { View, ActivityIndicator, Image, Text, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
+import { useAuth } from "../src/contexts/AuthContext";
+import { colors, LOGO_URL } from "../src/theme";
 
 export default function Index() {
-  console.log(EXPO_PUBLIC_BACKEND_URL, "EXPO_PUBLIC_BACKEND_URL");
+  const router = useRouter();
+  const { loading, user } = useAuth();
+
+  useEffect(() => {
+    if (!loading) {
+      if (user) router.replace("/(app)/dashboard");
+      else router.replace("/(auth)/login");
+    }
+  }, [loading, user]);
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require("../assets/images/app-image.png")}
-        style={styles.image}
-      />
+    <View style={styles.root} testID="splash-screen">
+      <Image source={{ uri: LOGO_URL }} style={styles.logo} resizeMode="contain" />
+      <Text style={styles.tagline}>Store Secure. Access Anywhere.</Text>
+      <ActivityIndicator color={colors.accent} style={{ marginTop: 24 }} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: "#0c0c0c",
+    backgroundColor: colors.bg,
     alignItems: "center",
     justifyContent: "center",
+    padding: 24,
   },
-  image: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "contain",
-  },
+  logo: { width: 220, height: 220 },
+  tagline: { color: colors.muted, fontSize: 14, letterSpacing: 1.2, marginTop: 8, textTransform: "uppercase" },
 });
